@@ -1,10 +1,14 @@
 import React from 'react'
-// import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
+import Title from './Title'
+import TeamRequest from './TeamRequest'
 
 const App = () => {
   return (
     <>
-      <h1>hello world</h1>
+      <Route path='/' component={Title} />
+      <Route path='/' component={TeamRequest} />
     </>
   )
 }
