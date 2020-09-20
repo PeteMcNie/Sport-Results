@@ -1,3 +1,15 @@
 # React-Redux-Thunk-Boilerplate
 
-A bolier plate to get started on react projects quicker
+I created this boilderplate for my react projects to get underway quicker. Tech includes:
+
+- React
+- Redux
+- Redux-Thunk
+- Jest
+- Testing library
+- Cypress
+- Nodemon
+- Eslint
+- Babel
+- Webpack
+
