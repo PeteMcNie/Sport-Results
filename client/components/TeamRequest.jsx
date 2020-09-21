@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import { getTeam } from '../actions'
+import { getTeamAction } from '../actions'
 
 function TeamRequest (props) {
   const [state, setState] = useState('')
@@ -15,7 +15,7 @@ function TeamRequest (props) {
   return (
     <div>
       <input value={state} onChange={handleChange} placeholder='Team requested...' />
-      <button onClick={() => props.dispatch(getTeam(state))}>Submit</button>
+      <button onClick={() => props.dispatch(getTeamAction(state))}>Submit</button>
     </div>
   )
 }
