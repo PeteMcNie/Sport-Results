@@ -1,7 +1,7 @@
 {
-  "name": "salhouse-goldens",
+  "name": "sports-results",
   "version": "1.0.0",
-  "description": "Salhouse Goldens",
+  "description": "Sports Results",
   "main": "index.js",
   "author": "P R McNie",
   "license": "ISC",
