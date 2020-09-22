@@ -12,10 +12,23 @@ function TeamRequest (props) {
     setState(value)
   }
 
+  function submitHandler (state) {
+    console.log(state)
+    if (state) {
+      props.dispatch(getTeamAction(state))
+    }
+  }
+
   return (
     <div>
-      <input value={state} onChange={handleChange} placeholder='Team requested...' />
-      <button onClick={() => props.dispatch(getTeamAction(state))}>Submit</button>
+      {/* <input value={state} onChange={handleChange} placeholder='Team requested...' /> */}
+      <select onChange={handleChange}>
+        <option value={null}>Select Team</option>
+        <option value={66}>Man Utd</option>
+        <option value={397}>Brighton</option>
+      </select>
+      <option></option>
+      <button onClick={() => submitHandler(state)}>Submit</button>
     </div>
   )
 }
