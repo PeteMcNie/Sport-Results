@@ -22,5 +22,3 @@ getTeamInfo(66) // Manchester United id
 getTeamInfo(397) // Brighton id
 
 module.exports = getTeamInfo
-
-
