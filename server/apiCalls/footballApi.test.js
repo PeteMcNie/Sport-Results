@@ -7,7 +7,7 @@ jest.mock('./footballApi', () => {
   }
 })
 
-test('returns football api data', () => {
+xtest('returns football api data', () => {
   const teamRequested = 66
 
   getTeamInfo.mockImplementation(() => Promise.resolve(
