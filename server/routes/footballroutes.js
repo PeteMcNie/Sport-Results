@@ -1,6 +1,7 @@
 const express = require('express')
 const request = require('superagent')
 
+const key = require('../tools/footballApiKey')
 const trimData = require('../functions/trimData')
 
 const router = express.Router()
@@ -10,9 +11,11 @@ module.exports = router
 router.get('/:team', (req, res) => {
   const team = req.params.team
 
+  console.log('FBROUTES', key.key)
+
   return request
     .get(`https://api.football-data.org/v2/teams/${team}/matches/`)
-    .set('X-Auth-Token', '9a0717303f9a43ef8574f6f0a14dee51')
+    .set('X-Auth-Token', `${key.key}`)
     .then(teamInfo => {
       const trimmedInfo = trimData(teamInfo)
       res.json(trimmedInfo)
