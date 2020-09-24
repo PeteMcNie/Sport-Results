@@ -1,3 +1,3 @@
 #!/bin/sh
-node ./server/apiCalls/footballApi.js
-
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+node $DIR/footballApi.js
