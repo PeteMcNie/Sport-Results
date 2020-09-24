@@ -1,3 +1,3 @@
 #!/bin/sh
-node ./footballApi.js
+node ./server/apiCalls/footballApi.js
 
