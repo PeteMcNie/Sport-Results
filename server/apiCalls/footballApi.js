@@ -49,4 +49,3 @@ module.exports = getTeamInfo
 //
 // If successful, terminal should state: crontab: installing new crontab
 // To check it was successful list all crontabs in terminal by typing: crontab -l
-
