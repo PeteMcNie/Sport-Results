@@ -9,20 +9,21 @@ export function gettingTeam () {
   }
 }
 
-export function gettingTeamSuccess (team) {
+export function gettingTeamSuccess (teamMatchData) {
   return {
     type: GET_TEAM_SUCCESS,
-    team
+    teamMatchData
   }
 }
 
 export function getTeamAction (team) {
-  console.log(team)
+//  console.log(team)
   return (dispatch) => {
     dispatch(gettingTeam())
     return getTeam(team)
-      .then(response => {
-        console.log('getTeamAction', response)
+      .then(teamMatchData => {
+        console.log('getTeamAction', teamMatchData)
+        dispatch(gettingTeamSuccess(teamMatchData))
       })
   }
 }
