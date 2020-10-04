@@ -12,7 +12,7 @@ router.get('/:team', (req, res) => {
   // const team = req.params.team
   // console.log('football routes ', team)   NOT CURRENTLY BEING USED AS USING FILE SYSTEM NOT DB
 
-  fs.readFile(filepath, 'utf8', (err, contents) => {  // CURRENTLY GETTING DATA FROM FS NOT DB
+  fs.readFile(filepath, 'utf8', (err, contents) => { // CURRENTLY GETTING DATA FROM FS NOT DB
     if (err) { throw err }
     const matchInfo = JSON.parse(contents)
     res.send(matchInfo)
