@@ -1,21 +1,22 @@
 const express = require('express')
 
-// const getTeamInfo = require('../apiCalls/footballApi')
-
 const router = express.Router()
+
+const fs = require('fs')
+const path = require('path')
+const filepath = path.join(__dirname, '../db/footballdata.json')
 
 module.exports = router
 
 router.get('/:team', (req, res) => {
   // const team = req.params.team
+  // console.log('football routes ', team)   NOT CURRENTLY BEING USED AS USING FILE SYSTEM NOT DB
 
-  // return getTeamInfo(team)
-  //   .then(teamInfo => {
-  //     res.json(teamInfo)
-  //   })
-  //   .catch(err => {
-  //     res.status(500).send('ERROR IN FOOTBALL GET ROUTE', err.message)
-  //   })
+  fs.readFile(filepath, 'utf8', (err, contents) => {  // CURRENTLY GETTING DATA FROM FS NOT DB
+    if (err) { throw err }
+    const matchInfo = JSON.parse(contents)
+    res.send(matchInfo)
+  })
 })
 
 // FURTHER API CALLS COULD BE MADE USING THE BELOW:
