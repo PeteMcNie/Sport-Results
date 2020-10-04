@@ -22,7 +22,7 @@ export function getTeamAction (team) {
     dispatch(gettingTeam())
     return getTeam(team)
       .then(teamMatchData => {
-        console.log('getTeamAction', teamMatchData)
+        // console.log('getTeamAction', teamMatchData)
         dispatch(gettingTeamSuccess(teamMatchData))
       })
   }
