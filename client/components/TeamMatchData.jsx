@@ -10,9 +10,11 @@ function TeamMatchData (props) {
     <div>
       <table>
         <thead>
-          <th>Home Team</th>
-          <th>Away Team</th>
-          <th>Winner</th>
+          <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Winner</th>
+          </tr>
         </thead>
         <tbody>
           {teamMatchData.map(el =>
