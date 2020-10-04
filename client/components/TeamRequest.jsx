@@ -13,7 +13,7 @@ function TeamRequest (props) {
   }
 
   function submitHandler (state) {
-    console.log(state)
+    // console.log(state)
     if (state) {
       props.dispatch(getTeamAction(state))
     }

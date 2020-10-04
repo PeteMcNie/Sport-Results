@@ -28,7 +28,8 @@ module.exports = getTeamInfo
 // 2. In Terminal: vim cronjob-(whatYouWantToCallJob).sh
 // 3. In vim:
 //    first line type: #!/bin/sh
-//    second line type: node (theFileNameOfFileYouWantToRun).js
+//    second line type: DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"  THIS IS A HACK TO SEARCH FOR THE PATH
+//    third line tyoe: node $DIR/(theFileNameOfFileYouWantToRun).js
 //    Save and exit vim. Hit ESC then type: :x then hit enter.
 // 4. Make the script we just created (cronjob-(whatYouWantToCallJob).sh) executable by typing
 //    chmod +x yourNewScriptFile.sh       eg: chmod +x cronjob-(whatYouWantToCallJob).sh
@@ -39,7 +40,10 @@ module.exports = getTeamInfo
 // 6. To make the job run at specified intervals we need to open or create a crontab,
 //    in terminal type: crontab -e  (this opens vim)
 // 7. In vim:
-//    first line type: 0 * * * * /ABSOLUTE PATH TO/cronjob-(whatYouWantToCallJob).sh
+//    first line type: PATH=ABSOLUTE PATH TO FOLDER THAT FILE BEING RUN IS IN(then straight after):/usr/local/bin:/usr/bin:/bin
+//    Notes: this line defines the files to look in for NODE (node) from step 3 above
+//
+//    second line type: 0 * * * * /ABSOLUTE PATH TO FILE BEING RUN/cronjob-(whatYouWantToCallJob).sh
 //                  min hr day mth dayOfWeek
 //    NOTES: These are time refeneces, when the script will run. Google crontab to find out more.
 //           On mac, open finder and drag and drop the script file you created

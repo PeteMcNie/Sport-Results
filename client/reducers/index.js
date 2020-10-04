@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-// import newTeams from './twoTeamsReducer'
+import teamMatchData from './teamMatchData'
 
 export default combineReducers({
-//   newTeams
+  teamMatchData
 })
