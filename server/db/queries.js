@@ -1,19 +1,13 @@
-const { Client } = require('pg')
-const client = new Client({
-  user: 'postgres', // Also found in pgAdmin, master folder before db folder I named
-  host: 'localhost', // Server name or IP address
-  database: 'petemcnie', // Name of my db, see pgAdmin
-  password: 'password', // Password I set
-  port: 5433
-})
+const models = require('../db/models')
 
-function getMatches (req, res) {
-//   client.connect()
-//     .then(() => console.log('Connected Successfully'))
-//     .then(() => client.query('SELECT * FROM matches'))
-//     .then((response) => console.log(response.fields))
-//     .catch(err => console.log(err))
-//     .finally(() => client.end())
+async function getMatches (req, res) {
+  try {
+    const matches = await models.Matches.findAll()
+    // console.log('getMatches db function ', matches)
+    return matches
+  } catch (err) {
+    return res.status(500).send(err.message)
+  }
 }
 
 module.exports = {
