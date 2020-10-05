@@ -3,31 +3,25 @@ const db = require('../db/queries')
 
 const router = express.Router()
 
-const fs = require('fs')
-const path = require('path')
-const filepath = path.join(__dirname, '../db/footballdata.json')
+// const fs = require('fs')
+// const path = require('path')
+// const filepath = path.join(__dirname, '../db/footballdata.json')
 
 module.exports = router
 
-router.get('/:team', (req, res, next) => {
+router.get('/:team', (req, res) => {
   // const team = req.params.team
   // console.log('football routes ', team)   NOT CURRENTLY BEING USED AS USING FILE SYSTEM NOT DB
 
-  db.getMatches((err, res) => {
-    if (err) {
-      return next(err)
-    }
-    res.send(res.rows)
-  })
+  db.getMatches()
+    .then(matches => {
+      // console.log('GET ROUTE MATCHES ', matches)
+      res.status(200).send(matches)
+    })
+    .catch(err => {
+      res.status(500).send('Database error: ' + err.message)
+    })
 })
-// .then(matches => {
-//   console.log('GET ROUTE MATCHES ', matches)
-//   res.status(200).json(matches)
-// })
-// .catch(err => {
-//   res.status(500).send('Database error: ' + err.message)
-// })
-// })
 
 //   fs.readFile(filepath, 'utf8', (err, contents) => { // CURRENTLY GETTING DATA FROM FS NOT DB
 //     if (err) { throw err }
