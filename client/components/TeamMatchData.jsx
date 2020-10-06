@@ -19,9 +19,9 @@ function TeamMatchData (props) {
         <tbody>
           {teamMatchData.map(el =>
             <tr key={el.id}>
-              <td>{el.homeTeam.name}</td>
-              <td>{el.awayTeam.name}</td>
-              <td>{el.score.winner}</td>
+              <td>{el.homeTeam}</td>
+              <td>{el.awayTeam}</td>
+              <td>{el.winner}</td>
             </tr>
           )}
         </tbody>
