@@ -14,7 +14,7 @@
 
 6. In terminal use postgres: (you may need: brew install postgresql, then: brew services start postgresql) In terminal: psql postgres
 7. To create a new postgres user: postgres=# CREATE ROLE me WITH LOGIN PASSWORD 'password';
-8. To enable user 'me' to ccreate a db: postgres=# ALTER ROLE me CREATEDB;
+8. To enable user 'me' to create a db: postgres=# ALTER ROLE me CREATEDB;
 9. In terminal: \du (lists all users and roles)
 10. To connect user with postgres, in terminal: psql -d postgres -U me (you will see new prompt in terminal: postgres=> instead of postgres=#)
 NOTE: If stuck use commandline to check what DB you have and who the OWNER is to help debug
