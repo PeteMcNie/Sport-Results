@@ -1,5 +1,7 @@
+// const getTeamInfo = require('../apiCalls/footballApi')
+
 function trimData (teamInfo) {
-  const trimmedInfo = teamInfo.body.matches.map(function (el) {
+  const trimmedInfo = teamInfo.map(function (el) {
     return {
       awayTeam: el.awayTeam,
       hometeam: el.homeTeam,
