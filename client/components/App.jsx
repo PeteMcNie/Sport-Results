@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import Title from './Title'
+import SportTitle from './SportTitle'
 import Links from './Links'
 import TeamRequest from './TeamRequest'
 import TeamMatchData from './TeamMatchData'
@@ -9,8 +9,8 @@ import TeamMatchData from './TeamMatchData'
 const App = () => {
   return (
     <>
-      <Route path='/' component={Links} />
-      <Route path='/' component={Title} />
+      <Route exact path='/' component={Links} />
+      <Route path='/sportresults' component={SportTitle} />
       <Route path='/sportresults' component={TeamRequest} />
       <Route path='/sportresults' component={TeamMatchData} />
     </>
