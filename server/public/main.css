@@ -3,10 +3,30 @@
 }
 
 body {
-    /* background-color: #ea9a96; */
-    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Dosis', sans-serif; /* Sport result font */
 }
 
 h1 {
     color: blue;
+}
+
+.linkscontainer {
+    border: 2px solid rgb(67, 112, 0);
+    width: 100%;
+}
+
+.links {
+    background-color: rgb(37, 27, 27);
+    display: inline-block;
+    width: 50%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    font-size: 3rem;
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
