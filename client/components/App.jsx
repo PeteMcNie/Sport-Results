@@ -9,10 +9,10 @@ import TeamMatchData from './TeamMatchData'
 const App = () => {
   return (
     <>
-      <Route path='/' component={Title} />
       <Route path='/' component={Links} />
-      <Route path='/team' component={TeamRequest} />
-      <Route path='/team' component={TeamMatchData} />
+      <Route path='/' component={Title} />
+      <Route path='/sportresults' component={TeamRequest} />
+      <Route path='/sportresults' component={TeamMatchData} />
     </>
   )
 }
