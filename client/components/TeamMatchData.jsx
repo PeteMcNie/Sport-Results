@@ -11,6 +11,7 @@ function TeamMatchData (props) {
       <table>
         <thead>
           <tr>
+            <th>Matchday</th>
             <th>Home Team</th>
             <th>Away Team</th>
             <th>Winner</th>
@@ -19,6 +20,7 @@ function TeamMatchData (props) {
         <tbody>
           {teamMatchData.map(el =>
             <tr key={el.id}>
+              <td>{el.matchday}</td>
               <td>{el.homeTeam.name}</td>
               <td>{el.awayTeam.name}</td>
               <td>{el.score.winner}</td>

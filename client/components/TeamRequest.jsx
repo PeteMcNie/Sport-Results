@@ -21,7 +21,6 @@ function TeamRequest (props) {
 
   return (
     <div>
-      {/* <input value={state} onChange={handleChange} placeholder='Team requested...' /> */}
       <select onChange={handleChange}>
         <option value={null}>Select Team</option>
         <option value={66}>Man Utd</option>
