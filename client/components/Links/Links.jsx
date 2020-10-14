@@ -5,10 +5,10 @@ function Links () {
     return (
         <div className='linksconatiner'>
             <div className='links'>
-                <Link to={'/sportresults'}>Sport Results</Link>
+                <Link to={'/sportresults'} className='homepage'>Sport Results</Link>
             </div>
             <div className='links'>
-                <Link to={'/spaceX'}>SpaceX</Link>
+                <Link to={'/spaceX'} className='homepage'>SpaceX</Link>
             </div>
         </div>
     )
