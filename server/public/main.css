@@ -13,17 +13,17 @@ h1 {
 .linkscontainer {
     border: 2px solid rgb(67, 112, 0);
     width: 100%;
+    
 }
 
 .links {
     background-color: rgb(37, 27, 27);
     display: inline-block;
     width: 50%;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    height: 60vh;
+    padding-top: 40vh;
     text-align: center;
     font-size: 3rem;
-
 }
 
 a {
