@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function HomeLink () {
     return (
-        <div>
-            <h1>hello</h1>
+        <div className='homecontainer'>
+            <Link to="/" className='homelink'>Home</Link>
         </div>
     )
 }
