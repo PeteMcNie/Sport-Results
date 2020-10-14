@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-function Title () {
+function Title (props) {
+  console.log('Title props ', props)
   return (
     <div>
       <h1>Sport Results</h1>
@@ -8,4 +10,10 @@ function Title () {
   )
 }
 
-export default Title
+function mapStateToProps (state) {
+  return {
+    state: state
+  }
+}
+
+export default connect(mapStateToProps)(Title)
