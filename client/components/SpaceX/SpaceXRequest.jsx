@@ -1,29 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import { useForm } from 'react-hook-form'
 
-function SpaceXRequest (props) {
-    const [state, setState] = useState('')
+function SpaceXRequest(props) {
+  const { register, handleSubmit, errors } = useForm()
 
-    function handleChange (evt) {
-        const { value } = evt.target
-        setState(value)
-    }
-
-    function submitHandler () {
-        console.log('spacexrequest ', state)
-        if (state) {
-            props.dispatch(getTheSpaceData(state))
-        }
-    }
-
-    return (
-        <div>
-            <form onSubmit={() => submitHandler}>
-                <input onChange={handleChange} value={state}></input>
-                <button>Blast off!</button>
-            </form>
-        </div>
-    )
+  function onSubmit (data) {
+      console.log(data)
+      props.dispatch(getTheSpaceData(data))
+  }
+  console.log(errors)
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="text" placeholder="SpaceX" name="SpaceX" ref={register({required: true, maxLength: 30})} />
+      <input type="submit" />
+    </form>
+  );
 }
 
 export default connect()(SpaceXRequest)
