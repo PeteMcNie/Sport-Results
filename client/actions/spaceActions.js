@@ -5,11 +5,12 @@ export const GET_SPACEX_DATA_SUCCESS = 'GET_SPACEX_DATA_SUCCESS'
 export const GET_SPACEX_DATA_FAILURE = 'GET_SPACEX_DATA_FAILURE'
 
 export function getSpaceData (data) {
+  console.log('space action sending: ', data)
   return (dispatch) => {
     dispatch(gettingSpaceXData())
     return getSpaceXData(data)
       .then(returnData => {
-        console.log(returnData)
+        console.log('space action returning: ', returnData)
       })
   }
 }
