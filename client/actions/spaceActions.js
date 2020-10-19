@@ -1,3 +1,5 @@
+import { getSpaceXData } from '../api/spacexApi'
+
 export const GET_SPACEX_DATA = 'GET_SPACEX_DATA'
 export const GET_SPACEX_DATA_SUCCESS = 'GET_SPACEX_DATA_SUCCESS'
 export const GET_SPACEX_DATA_FAILURE = 'GET_SPACEX_DATA_FAILURE'
