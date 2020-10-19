@@ -5,13 +5,13 @@ import TeamMatchData from './Sports/TeamMatchData'
 import HomeLink from './Links/HomeLink'
 
 function Sports () {
-    return (
-        <>
-            <TeamRequest />
-            <TeamMatchData />
-            <HomeLink />
-        </>
-    )
+  return (
+    <>
+      <TeamRequest />
+      <TeamMatchData />
+      <HomeLink />
+    </>
+  )
 }
 
 export default Sports

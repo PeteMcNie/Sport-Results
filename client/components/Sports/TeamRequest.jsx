@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import { getTeamAction } from '../../actions'
+import { getTeamAction } from '../../actions/footballActions'
 
 function TeamRequest (props) {
   const [state, setState] = useState('')

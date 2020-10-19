@@ -9,24 +9,24 @@ function TeamMatchData (props) {
   return (
     <div>
       {teamMatchData.map(el =>
-      <table>
-        <thead>
-          <tr>
-            <th>Matchday</th>
-            <th>Home Team</th>
-            <th>Away Team</th>
-            <th>Winner</th>
-          </tr>
-        </thead>
-        <tbody>
+        <table>
+          <thead>
+            <tr>
+              <th>Matchday</th>
+              <th>Home Team</th>
+              <th>Away Team</th>
+              <th>Winner</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr key={el.id}>
               <td>{el.matchday}</td>
               <td>{el.homeTeam.name}</td>
               <td>{el.awayTeam.name}</td>
               <td>{el.score.winner}</td>
             </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
       )}
     </div>
 
