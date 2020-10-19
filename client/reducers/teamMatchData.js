@@ -1,4 +1,4 @@
-import { GET_TEAM_SUCCESS } from '../actions'
+import { GET_TEAM_SUCCESS } from '../actions/footballActions'
 
 function teamMatchData (state = [], action) {
   switch (action.type) {

@@ -1,4 +1,4 @@
-import { getTeam } from '../api/api'
+import { getTeam } from '../api/footballApi'
 
 export const GET_TEAM = 'GET_TEAM'
 export const GET_TEAM_SUCCESS = 'GET_TEAM_SUCCESS'
