@@ -13,7 +13,7 @@ function getTeamInfo (team) {
     })
     .then(trimmedInfo => {
       console.log('CRONJOB CALL 22', trimmedInfo)
-      //send to database
+      // send to database
     })
     .catch(err => {
       throw err.status(500).send('ERROR COLLECTING DATA FROM FOOTBALL API', err.message)
