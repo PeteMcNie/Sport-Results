@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
+import { getSpaceData } from '../../actions/spaceActions'
+
 function SpaceXRequest () {
   const { register, handleSubmit, errors } = useForm()
   const dispatch = useDispatch()
