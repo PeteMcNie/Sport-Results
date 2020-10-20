@@ -10,7 +10,7 @@ export function getSpaceData (data) {
     dispatch(gettingSpaceXData())
     return getSpaceXData(data)
       .then(returnData => {
-        console.log('space action returning: ', returnData)
+        console.log('space action returning data: ', returnData)
       })
   }
 }
