@@ -6,5 +6,5 @@ module.exports = router
 
 router.get('/:data', (req, res) => {
   const data = req.params.data
-  console.log('Spacexroutes data: ', data.spacex)
+  console.log('Spacexroutes data: ', data)
 })
