@@ -10,7 +10,7 @@ export function onloadGetSXData () {
       console.log('spacex ONLOAD request RESPONSE: ', response.body)
     })
     .catch(err => {
-      console.err('Error in spacexApi: onloadGetSXData', err)
+      console.error('Error in spacexApi: onloadGetSXData', err)
     })
 }
 
@@ -23,6 +23,6 @@ export function getSpaceXData (data) {
       console.log('spacex GET request RESPONSE: ', response.body)
     })
     .catch(err => {
-      console.err('Error in spacexApi: getSpaceXData', err)
+      console.error('Error in spacexApi: getSpaceXData', err)
     })
 }
