@@ -5,10 +5,12 @@ module.exports = router
 const spacexapi = require('../apiCalls/spacexApi')
 
 router.get('/', (req, res) => {
-  console.log('ONLOAD SPACEX ROUTE HIT')
   spacexapi.getspacexdata()
     .then(data => {
-      console.log('spacexdata in spacexroutes', data)
+      res.status(200).send(data)
+    })
+    .catch(err => {
+      res.status(500).send('Error in spacexroutes: ' + err.message)
     })
 })
 
