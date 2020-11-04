@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   console.log('ONLOAD SPACEX ROUTE HIT')
   spacexapi.getspacexdata()
     .then(data => {
-      console.log('spacexdata in route', data)
+      console.log('spacexdata in spacexroutes', data)
     })
 })
 
