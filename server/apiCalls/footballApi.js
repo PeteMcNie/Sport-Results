@@ -9,7 +9,8 @@ function getTeamInfo (team) {
     .set('X-Auth-Token', `${key.key}`)
     .then(teamInfo => {
       console.log('CRONJOB CALL', teamInfo.body.matches)
-      trimData(teamInfo.body.matches)
+      const trimmedInfo = trimData(teamInfo.body.matches)
+      return trimmedInfo
     })
     .then(trimmedInfo => {
       console.log('CRONJOB CALL 22', trimmedInfo)
