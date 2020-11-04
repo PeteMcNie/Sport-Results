@@ -1,5 +1,7 @@
 const request = require('superagent')
 
+const trimSpaceXData = require('../functions/trimSpaceXData')
+
 const spacexapiURL = 'https://api.spacexdata.com/v4/launches/past'
 
 function getspacexdata () {
@@ -7,7 +9,15 @@ function getspacexdata () {
   return request
     .get(`${spacexapiURL}`)
     .then(data => {
-      console.log('NEW spacex data received', data.body)
+      // console.log('NEW spacex data received', data.body)
+      const trimmedData = trimSpaceXData(data.body)
+      return trimmedData
+    })
+    .then(trimmedData => {
+      console.log('spaceXApi trimmed DATA RETURNED ', trimmedData)
+    })
+    .catch(err => {
+      throw err.status(500).send('ERROR COLLECTING DATA FROM SPACEX API', err.message)
     })
 }
 
