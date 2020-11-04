@@ -13,7 +13,6 @@ function trimSpaceXData (data) {
       }
     }
   })
-  // console.log('TRIMMED DATA IN TRIMSPACEXDATA ', trimmedData)
   return trimmedData
 }
 
