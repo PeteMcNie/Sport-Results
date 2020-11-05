@@ -5,12 +5,15 @@ export const ON_LOAD_GET_SPACEX_DATA_SUCCESS = 'ON_LOAD_GET_SPACEX_DATA_SUCCESS'
 export const ON_LOAD_GET_SPACEX_DATA_FAILURE = 'ON_LOAD_GET_SPACEX_DATA_FAILURE'
 
 export function getUpdatedSpaceXData () {
-  // console.log('ONLOAD SPACEX ACTION CALLED')
   return (dispatch) => {
     dispatch(onloadGettingSXData)
     return onloadGetSXData()
-      .then(returnData => {
-        console.log('onload spacex action returning data: ', returnData)
+      .then(latestData => {
+        console.log('onload spacex action returning data: ', latestData)
+        dispatch(onloadSpaceXSuccess(latestData))
+      })
+      .catch(err => {
+        dispatch(onloadSpaceXFailure(err.message))
       })
   }
 }
@@ -18,6 +21,20 @@ export function getUpdatedSpaceXData () {
 export function onloadGettingSXData () {
   return {
     type: ON_LOAD_GET_SPACEX_DATA
+  }
+}
+
+export function onloadSpaceXSuccess (latestData) {
+  return {
+    type: ON_LOAD_GET_SPACEX_DATA_SUCCESS,
+    latestData
+  }
+}
+
+export function onloadSpaceXFailure (message) {
+  return {
+    type: ON_LOAD_GET_SPACEX_DATA_FAILURE,
+    message
   }
 }
 
