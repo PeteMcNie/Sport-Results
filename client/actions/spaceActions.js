@@ -27,7 +27,7 @@ export function onloadGettingSXData () {
 export function onloadSpaceXSuccess (latestData) {
   return {
     type: ON_LOAD_GET_SPACEX_DATA_SUCCESS,
-    latestData
+    spacexdata: latestData
   }
 }
 
