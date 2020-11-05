@@ -6,10 +6,9 @@ export const ON_LOAD_GET_SPACEX_DATA_FAILURE = 'ON_LOAD_GET_SPACEX_DATA_FAILURE'
 
 export function getUpdatedSpaceXData () {
   return (dispatch) => {
-    dispatch(onloadGettingSXData)
+    dispatch(onloadGettingSXData())
     return onloadGetSXData()
       .then(latestData => {
-        console.log('onload spacex action returning data: ', latestData)
         dispatch(onloadSpaceXSuccess(latestData))
       })
       .catch(err => {
