@@ -36,7 +36,6 @@ function SpaceXData () {
             </tr>
           </tbody>
         )}
-
       </table>
     </>
   )
