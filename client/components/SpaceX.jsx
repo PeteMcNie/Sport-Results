@@ -18,7 +18,7 @@ function SpaceX () {
     <>
       <SpaceXRequest />
       <SpaceXData />
-      <HomeLink /> 
+      <HomeLink />
     </>
   )
 }
