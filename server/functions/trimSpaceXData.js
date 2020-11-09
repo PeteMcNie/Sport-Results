@@ -1,7 +1,7 @@
 function trimSpaceXData (data) {
   const latestResults = []
   data.map(el => {
-    // console.log('Inside map function ', el)
+    //  console.log('Inside map function ', el)
     if (el.flight_number >= 100) {
       latestResults.push({
         flightNumber: el.flight_number,
@@ -12,10 +12,12 @@ function trimSpaceXData (data) {
         links: {
           wikipedia: el.links.wikipedia,
           article: el.links.article
-        }
+        },
+        rocket: el.rocket
       })
     }
   })
+  // console.log('AFTER TRIM', latestResults)
   return latestResults
 }
 
