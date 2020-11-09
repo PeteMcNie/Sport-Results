@@ -45,3 +45,23 @@ a.homelink {
     color:white;
     text-decoration: none;
 }
+
+.tableblock {
+    background-color: white;
+}
+
+tr.headerrow {
+    background-color: rgb(1, 1, 37);
+}
+
+.tableheader {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.tableinfo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
