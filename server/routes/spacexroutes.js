@@ -7,6 +7,7 @@ const spacexapi = require('../apiCalls/spacexApi')
 router.get('/', (req, res) => {
   spacexapi.getspacexdata()
     .then(data => {
+      console.log('CHECK TO SEE IF DATA IS CORRECTLY BEING SENT TO: spacexroutes ', data)
       res.status(200).send(data)
     })
     .catch(err => {
