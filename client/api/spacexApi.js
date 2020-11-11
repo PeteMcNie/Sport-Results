@@ -6,6 +6,7 @@ export function onloadGetSXData () {
   return request
     .get(`${spaceXUrl}`)
     .then(response => {
+      console.log('ONLOAD RESPONSE should have LAUNCH + ROCKET data ', response.body)
       return response.body
     })
     .catch(err => {
