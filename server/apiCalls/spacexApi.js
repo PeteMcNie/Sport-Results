@@ -2,24 +2,27 @@ const request = require('superagent')
 
 const trimSpaceXData = require('../functions/trimSpaceXData')
 const trimRocketData = require('../functions/trimRocketData')
+const selectRocketsUsedInLaunches = require('../functions/selectRockets')
 
 const spacexLaunchUrl = 'https://api.spacexdata.com/v4/launches/past'
 const spacexRocketUrl = 'https://api.spacexdata.com/v4/rockets'
 
 async function getspacexdata () {
+  const spacexData = []
   const launches = await getAllPastLaunches()
-  const rockets = await getAllRockets()
-  Promise.all([launches, rockets]).then(data => {
-    console.log('PROMISE ALL?? ', data)
-    // const selectRockets = selectRocketsUsedInLaunches(data)
-    // create new file to select only the rockets required
-    // return only those rockets to componets for rendering
-  })
+  const allRockets = await getAllRockets()
 
-
-  const spacexData = { launches, rockets }
-  // console.log('getspacexdata LAUNCHES & ROCKETS ', spacexData)
-  return spacexData
+  Promise.all([launches, allRockets])
+    .then(data => {
+      const rockets = selectRocketsUsedInLaunches(data)
+      const spacexData = { launches, rockets }
+      console.log('getspacexdata LAUNCHES & ROCKETS ', spacexData)
+      return spacexData
+    })
+    .catch(err => {
+      throw err.status(500).send('ERROR IN PROMISE ALL getspacexdata function', err.message)
+    })
+  console.log(spacexData)
 }
 
 function getAllPastLaunches () {
